@@ -9,13 +9,11 @@ import javax.persistence.Entity;
 public class Form extends Model {
 
     public String titulo;
-
-    public int usuarios; // cambiar el int por el long
     public String asunto_tema;
 
-    public Form(String titulo, int usuarios, String asunto_tema){
+    public Form(String titulo, String asunto_tema){
         this.titulo=titulo;
-        this.usuarios=usuarios;
+
         this.asunto_tema=asunto_tema;
         return ;
     }
@@ -24,4 +22,8 @@ public class Form extends Model {
 
     @OneToOne(mappedBy = "form")
     public Asignatura asigna;
+
+    @ManyToMany
+
+    public List <clase> personas = new ArrayList<clase>();
 }

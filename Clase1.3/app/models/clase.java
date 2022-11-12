@@ -25,4 +25,8 @@ public class clase extends Model {
 
         @OneToMany(mappedBy = "propietario")
         public List <Mensaje> menj = new ArrayList<Mensaje>();
+
+        @ManyToMany(mappedBy = "personas")
+
+        public List <Form> form = new ArrayList<Form>();
 }
