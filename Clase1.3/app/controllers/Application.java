@@ -311,4 +311,39 @@ public class Application extends Controller {
             renderText("No existe el foro");
         }
     }
+    public void DarseBaja(clase Usuario){
+        clase A =clase.find("byNombreAndPassword",Usuario.nombre,Usuario.password).first();
+        if(A==null)
+            renderText("El usuario no existia");
+        else{
+            if(A.menj.size()>0) {//Borramos la  lista de mensajes de A
+                for (Mensaje m : A.menj) {
+                    Mensaje x =Mensaje.find("byTexto",m.texto).first();
+                    x.delete();
+                }
+            }
+            if(A.asig.size()>0){
+                for(Asignatura a:A.asig){
+                    Asignatura x = Asignatura.find("byNombre",a.nombre).first();
+                    x.alumnos.remove(A);
+                    x.save();
+
+                }
+            }
+            if(A.form.size()>0) {
+                for (Form f : A.form) {
+                    Form x;
+                    if (f.titulo != null)
+                        x = Form.find("byTitulo", f.titulo).first();
+                    else
+                        x = Form.find(("byAsunto_tema"), f.asunto_tema).first();
+                    x.personas.remove(A);
+                    x.save();
+
+                }
+            }
+            A.delete();
+            renderText("Usuario eiminid@");
+        }
+    }
 }
