@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pagina de registro</title>
+</head>
+<style>
+.redondeado {
+   border-radius: 10px;
+ }
+p{
+	text-align:center;
+  }
+</style>
+<body>
+
+<h1 style= "text-align:center;"> Registro </h1>
+<p>
+  #{form @Register()  }
+  <label>Nombre:</label>
+  <input type="text" class="redondeado" name="nombre" size="19" /><br>
+  <br>
+
+  <label>Edad:</label>
+  <input type="integer" class="redondeado" name="edad" size="19" /><br>
+
+  <br>
+  <label>Contraseña: </label>
+  <input type="password" class="redondeado" name="password" size="19"/><br>
+  <br>
+  <label>Repetir Contraseña: </label>
+  <input type="password" class="redondeado" name="password2" size="19" /><br>
+  <br>
+  <input type="submit" class="redondeado" value="Registrarse" />
+
+
+
+  #{/form}
+</p>
+</body>
+</html>

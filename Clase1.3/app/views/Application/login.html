@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+<style>
+.redondeado {
+   border-radius: 10px;
+ }
+p{
+	text-align:center;
+  }
+</style>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1 style="text-align:center;">Iniciar sesion</h1>
+
+      <p>
+        #{form @Login()  }
+        <label>Nombre:</label>
+        <input type="text" class="redondeado" name="nombre" size="19" /><br>
+
+        <br>
+        <label>Contraseña: </label>
+        <input type="password" class="redondeado" name="password" size="19" /><br>
+        <br>
+
+        <input type="submit" class="redondeado" value="Iniciar sesión" />
+        #{/form}
+
+        <br>
+        <br>
+        #{form @EnviarRegistrarse()  }
+
+        <a href="@{EnviarRegistrarse()}">Registrarse</a>
+
+        #{/form}
+      </p>
+    </div>
+    <div class="col-sm-4"></div>
+
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
