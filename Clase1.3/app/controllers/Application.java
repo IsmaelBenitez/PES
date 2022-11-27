@@ -9,213 +9,82 @@ import models.*;
 
 public class Application extends Controller {
 
+    static String username;
+    @Before
+    static void connectedUser() { username = session.get("user");}
     public static void index() {
-/*
-        clase x= new clase("xavi",21,"contraseña").save();
-        Mensaje x2= new Mensaje(23.54,"Hola que tal").save();
-        Form x3= new Form("Cafereria",30,"Cierre de la caferetia").save();
-        Asignatura x4= new Asignatura("PES").save();
-
-        //Relación 1:N bidireccional
-        clase usuario= new clase("isma",20,"1234");
-        Mensaje mensaje=new Mensaje(21,"He comido carne");
-        Form forumPES= new Form("PES",30,"examen");
-
-        forumPES.save();
-        mensaje.save();
-        forumPES.menj2.add(mensaje);
-        usuario.menj.add(mensaje);
-        usuario.save();
-
-
-        mensaje.forum=forumPES;
-        mensaje.propietario= usuario;
-
-                Asignatura asignatura = new Asignatura("");
-        asignatura.nombre="PES";
-        asignatura.save();
-        clase usuario2= new clase("victor",20,"qwerr");
-
-        usuario2.asig.add(asignatura);
-        usuario2.save();
-
-       // forumPES.asigna=asignatura;
-       // asignatura.form= forumPES;
-
-        asignatura.alumnos.add(usuario2);
-        asignatura.save();
-
-        clase usuario3= new clase("pau",22,"4321");
-        Form forumCET= new Form("CET","practica");
-        forumCET.save();
-        usuario3.save();
-        usuario3.form.add(forumCET);
-        forumCET.personas.add(usuario3);
-
-        Form forumCET2= new Form("CET","practica");
-        forumCET2.save();
-        usuario2.save();
-        usuario2.form.add(forumCET2);
-        forumCET2.personas.add(usuario2);
-
-
-        asignatura.save();
-        forumCET.save();
-        //mensaje.save();
-        usuario3.save();
-
-
-        Asignatura asignatura2 = new Asignatura("");
-        asignatura2.nombre="PES";
-        asignatura2.save();
-        clase usuario4= new clase("paco",20,"987");
-
-        usuario4.asig.add(asignatura);
-        usuario4.save();
-        asignatura2.alumnos.add(usuario4);
-        asignatura2.save();
-
-*/
-
-        //Prueba relación 1:N
-
-
-        //Creo dos asignaturas y sus foros
-        Asignatura PES =new Asignatura("PES");
-        Asignatura ERF =new Asignatura("ERF");
-        Form FPES = new Form("PES","practica");
-        Form FERF = new Form("ERF","ads");
-
-
-        //Meto a tres personas
-        clase Ismael =new clase("Ismael",21,"hola");
-        clase Xavier =new clase("Xavier",21,"hola");
-        clase Victoria =new clase("Victoria",21,"hola");
-
-        //Las personas hacen asignaturas
-        Ismael.asig.add(PES);
-        Ismael.asig.add(ERF);
-        Xavier.asig.add(PES);
-        Xavier.asig.add(ERF);
-        Victoria.asig.add(PES);
-
-        PES.alumnos.add(Ismael);
-        PES.alumnos.add(Xavier);
-        PES.alumnos.add(Victoria);
-
-        ERF.alumnos.add(Ismael);
-        ERF.alumnos.add(Xavier);
-
-        Ismael.save();
-        Xavier.save();
-        Victoria.save();
-
-        FPES.save();
-        FERF.save();
-        PES.save();
-        ERF.save();
-
-        PES.form=FPES;
-        ERF.form=FERF;
-        FPES.asigna=PES;
-        FERF.asigna=ERF;
-
-        FPES.personas.add(Ismael);
-        FPES.personas.add(Victoria);
-        FERF.personas.add(Xavier);
-
-        FPES.save();
-        FERF.save();
-        PES.save();
-        ERF.save();
-
-        //Escribimos un mensaje
-        Mensaje mensaje=new Mensaje( 22.33, "Hola que tal");
-        mensaje.propietario=Ismael;
-        mensaje.forum=FPES;
-        mensaje.save();
-        Ismael.menj.add(mensaje);
-        FPES.menj2.add(mensaje);
-
-        Mensaje mensaje2=new Mensaje( 22.33, "Muy bien");
-        mensaje2.propietario=Victoria;
-        mensaje2.forum=FPES;
-        mensaje2.save();
-        Ismael.menj.add(mensaje2);
-        FPES.menj2.add(mensaje2);
-
-
-        Mensaje mensaje3=new Mensaje( 22.33, "ADS es muy útil");
-        mensaje3.propietario=Xavier;
-        mensaje3.forum=FERF;
-        mensaje3.save();
-        Xavier.menj.add(mensaje3);
-        FERF.menj2.add(mensaje3);
-
-        Xavier.save();
-        FERF.save();
-
-        render();
+        if(username != null) {
+            //renderText("Ususari "+ username + " connectat.");
+            //Tenim una sessió oberta amb l'uausi "username"
+            renderArgs.put("userConnected",username);
+            renderTemplate("Application/WEB.html");
+        }
+        renderTemplate("Application/MainPage.html");
     }
 
-    public void Register (String nombre, int edad, String password) {
-       clase cl = clase.find("byNombreAndEdadAndPassword",nombre,edad,password).first();
+    public void Register (clase u) {
+       clase cl = clase.find("byNombreAndEdadAndPassword",u.nombre,u.edad,u.password).first();
        if(cl==null){
-           new clase(nombre,edad,password).save();
-           renderText("registat " + nombre +" "+ edad +" "+ password);
-       }
+           if(u.nombre.equals("")||u.edad==0||u.password.equals("")) {
+               session.put("user", u.nombre);
+               renderArgs.put("userConnected",u.nombre);
+               renderTemplate("Application/MalRegistro.html");}
+               else{
+                   new clase(u.nombre, u.edad, u.password).save();
+                   //renderText("registat " + u.nombre +" "+ u.edad +" "+ u.password);
+               session.put("user", u.nombre);
+               renderArgs.put("userConnected",u.nombre);
+               renderTemplate("Application/WEB.html");
+               }
+           }
+
        else
        {
-           if(cl.nombre.equals(nombre))
+           if(cl.nombre.equals(u.nombre))
            {
-               renderText("ja existeix aquesta persona"+ " " +cl.edad+ " " +cl.password+ " xd");
+               //renderText("ja existeix aquesta persona"+ " " +cl.edad+ " " +cl.password+ " xd");
+               renderTemplate("Application/PersonaExiste.html");
            }
            else{
-               new clase(nombre,edad,password).save();
-               renderText("client registat "+ cl.nombre);
+               new clase(u.nombre,u.edad,u.password).save();
+               //renderText("client registat "+ cl.nombre);
+               renderTemplate("Application/WEB.html");
            }
        }
 
-       // clase c= clase.findBynombre(nombre);
-        //renderText(cl.nombre);
-        /*List<clase> cl = clase.all().fetch(100);
-        for(clase m :cl) {
-
-        if (m.nombre==null){
-            //new clase(nombre,edad,password).save();
-            //renderText("Client register");
-        }
-        else{
-            String Texto=" ";
-                String nombre_1=m.nombre;
-                if (nombre_1 == nombre){
-                    Texto = Texto + m.nombre + ": ya está registrado"+ "\n";
-                renderText(Texto);
-            }
-            else
-                {
-                    new clase(nombre,edad,password).save();
-                    renderText("Client registat "+nombre_1+ " "+ nombre);
-                }
-            }
-        }*/
     }
 
-    public void Login (String nombre, String password) {
-        clase cl = clase.find("byNombreAndPassword",nombre,password).first();
+    public void Login (clase u) {
+        clase cl = clase.find("byNombreAndPassword",u.nombre,u.password).first();
         if (cl==null){
             renderText("Regístrate");
         }
         else{
-            if(cl.nombre.equals(nombre) && cl.password.equals(password) )
+            if(cl.nombre.equals(u.nombre) && cl.password.equals(u.password) )
             {
-                renderText("Login con éxito "+ cl.nombre+ " " +cl.password);
+                session.put("user", u.nombre);
+                renderArgs.put("userConnected",u.nombre);
+                renderTemplate("Application/WEB.html");
+                //renderText("Login con éxito "+ cl.nombre+ " " +cl.password);
             }
             else{
                 renderText("Regístrate");
             }
 
         }
+    }
+
+    public void EnviarRegistrarse(){
+        renderTemplate("Application/Registrarse.html");
+    }
+
+    public void EnviarLogin(){
+        renderTemplate("Application/Login.html");
+    }
+    public void CerrarSesion(){
+        session.clear();
+        renderTemplate("Application/MainPage.html");
+
     }
 
     public void UsuariosForo(String asunto){
@@ -311,8 +180,8 @@ public class Application extends Controller {
             renderText("No existe el foro");
         }
     }
-    public void DarseBaja(clase Usuario){
-        clase A =clase.find("byNombreAndPassword",Usuario.nombre,Usuario.password).first();
+    public void DarseBaja(){
+        clase A =clase.find("byNombre",username).first();
         if(A==null)
             renderText("El usuario no existia");
         else{
@@ -343,7 +212,8 @@ public class Application extends Controller {
                 }
             }
             A.delete();
-            renderText("Usuario eiminid@");
+            renderTemplate("Application/MainPage.html");
+            //renderText("Usuario eiminid@");
         }
     }
 }

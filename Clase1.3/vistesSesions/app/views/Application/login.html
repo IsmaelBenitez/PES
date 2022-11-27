@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2> Identificat </h2>
+<br>
+
+<h2> Groovy sintax </h2>
+#{form @loginData()  }
+
+<label>First Name:</label>
+<input type="text" name="usuari.fullname" size="19" /><br>
+<br>
+
+
+<label>Password:</label>
+<input type="password" name="usuari.password" size="19"/>
+<br>
+<br>
+<input type="submit" value="Send data" />
+
+#{/form}
+
+<br>
+<br>
+
+<h2> HTML sintax </h2>
+
+<form action="@{loginData()}" method="get">
+
+<label>First Name:</label>
+<input type="text" name="usuari.fullname" size="19" /><br>
+<br>
+
+
+<label>Password:</label>
+<input type="password" name="usuari.password" size="19"/>
+<br>
+<br>
+<input type="submit" value="Send data" />
+
+</form>
+
+</body>
+</html>
+

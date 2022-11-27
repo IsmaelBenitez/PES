@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Welcome to the Supermarket ${userConnected} </h1>
+
+<h2>Products</h2>
+
+#{if products}
+    <table>
+	<head>
+         <tr> 
+		<th> Name </th>
+		<th> Price </th>
+	        <th> Stock </th>
+         </tr>
+        </head>
+
+	<tbody>
+		
+		#{list products, as:'product'}
+                <tr>
+                    <td>${product.nom}</td>
+                    <td>${product.preu}</td>
+                    <td>${product.stock}</td>
+                    <td><td>
+			#{form @compra(product.id,quantity)}
+			    <select name="quantity" size="1" >
+                		<option  value="1"  >1 kg </option>            
+				<option  value="2"  >2 kg </option>            
+				<option   value="3"  >3 kg </option>                
+			    </select>
+			    <input type="submit" value="Compra" />
+			#{/form}
+
+                        <form action="@{compra()}"  method="get">
+				<select name="quantity" size="1" >
+                		<option  value="1"  >1 kg </option>            
+				<option  value="2"  >2 kg </option>            
+				<option   value="3"  >3 kg </option>  
+				<input type="hidden"  name="id" value="${product.id}"  />
+				<input type="submit" value="Compra" /> 	             
+			</select>
+
+			</form>
+
+
+                </tr>
+           	 #{/list}
+
+
+			
+
+	</tbody>
+
+#{/if}
+#{form @TancaSessio() }
+
+<input type="submit" value="Close session" /><br><br>
+
+#{/form}
+ 
+</body>
+</html>

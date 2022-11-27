@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+#{if missatgeError}
+<h3>  Error   ${missatgeError} </h3>
+#{/if}
+
+<h1>Main Page of your application</h1>
+
+
+#{form @login() }
+
+<input type="submit" value="login" /><br><br>
+
+#{/form}
+
+
+
+#{form @register() }
+
+<button type="method" value="register">Register</button>
+
+#{/form}
+
+<p>
+<br>
+        <a href="@{login()}">Login User</a>
+</p>
+
+<h2> ----------------------------------------------------------- </h2>
+
+<p>
+        <a href="@{register()}">Register New User</a>
+</p>
+ 
+</body>
+</html>
