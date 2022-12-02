@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+    background-image: url('/views/Resource/eetac.jpg');
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Style the header */
+.header {
+  background-color: rgb(210, 210, 210, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+.row {
+  background-color: rgb(210, 210, 210);
+  padding: 20px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>EETAC Alumnes</h1>
+    <img src="/views/Resource/eetac.jpg">
+</div>
+<div class="topnav">
+    <a href="#">Foros</a>
+    <a href="#">Contactos</a>
+    <a href="#">Intervenciones</a>
+    <a href="#">Perfil</a>
+</div>
+<div class="row">
+    <input type="text" class=redondeado name="u.nombre" size="19">
+    <input type="submit" value="Send data" />
+
+</div>
+
+<div class="row">
+    <div class="column">
+        <h2>Column</h2>
+    </div>
+
+    <div class="column">
+        <h2>Column</h2>
+    </div>
+
+    <div class="column">
+        <h2>Column</h2>
+    </div>
+    <a href="@{CerrarSesion()}">Cerrar Sesion</a>
+
+    <br>
+    <br>
+    <br>
+    <form action="@{DarseBaja()}" method="get">
+        <input type="submit" value="Darse de Baja"/>
+    </form>
+</div>
+
+</body>
+</html>
