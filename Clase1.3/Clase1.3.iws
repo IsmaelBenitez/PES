@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29034bc4-161d-47fe-9f44-73fdd4d944d0" name="Changes" comment="" />
+    <list default="true" id="29034bc4-161d-47fe-9f44-73fdd4d944d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Clase1.3.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Clase1.3.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Application/WEB.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/WEB.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Application/WEBContactos.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/WEBContactos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Application/WEBIntervenciones.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Application/WEBPerfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/WEBPerfil.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

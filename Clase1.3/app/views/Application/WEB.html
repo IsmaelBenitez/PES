@@ -86,9 +86,17 @@ h1 {
   background-color: #ddd;
   color: black;
 }
-
-
 </style>
+    <script>
+    $(document).ready(function(){
+        $('#contactos').click(function() {
+            location.href = "/WEBContactos.html"
+        });
+        $('#perfil').click(function() {
+            location.href = "/WEBPerfil.html"
+        });
+    });
+    </script>
 </head>
 <body>
 <div class="header" >
@@ -96,9 +104,8 @@ h1 {
 </div>
 <div class="topnav">
     <a href="#" id="actual">Foros</a>
-    <a href="#">Contactos</a>
-    <a href="#">Intervenciones</a>
-    <a href="#">Perfil</a>
+    <a href="#" id="contactos">Contactos</a>
+    <a href="#" id="perfil">Perfil</a>
 </div>
 
 <div class="row" style="background-color: rgb(210, 210, 210, 0.8);">

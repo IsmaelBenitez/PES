@@ -89,18 +89,25 @@ h2 {
   background-color: #ddd;
   color: black;
 }
-
-
 </style>
+    <script>
+    $(document).ready(function(){
+        $('#foros').click(function() {
+            location.href = "/WEB.html"
+        });
+        $('#contactos').click(function() {
+            location.href = "/WEBContactos.html"
+        });
+    });
+    </script>
 </head>
 <body>
 <div class="header" >
     <h1>EETAC Alumnes</h1>
 </div>
 <div class="topnav">
-    <a href="#">Foros</a>
-    <a href="#">Contactos</a>
-    <a href="#">Intervenciones</a>
+    <a href="#" id="foros">Foros</a>
+    <a href="#" id="contactos">Contactos</a>
     <a href="#" id="actual">Perfil</a>
 </div>
 <div class="row" style="background-color: rgb(210, 210, 210, 0.8);">
