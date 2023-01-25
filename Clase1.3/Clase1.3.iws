@@ -4,37 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29034bc4-161d-47fe-9f44-73fdd4d944d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Clase1.3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Clase1.3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clase1.3.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Clase1.3.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Application/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Application/MainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/MainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Application/Registrarse.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/Registrarse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Application/WEB.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/WEB.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/docviewer" beforeDir="false" afterPath="$PROJECT_DIR$/modules/docviewer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/Bootstrap" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/Bootstrap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_MainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_MainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_Registrarse.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_Registrarse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_WEB.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_WEB.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_play__framework_templates_errors_404.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_play__framework_templates_errors_404.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.Application" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.Application" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Asignatura" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Asignatura" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Form" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Mensaje" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Mensaje" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.clase" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.clase" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/Bootstrap" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/Bootstrap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/_app_views_Application_MainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/_app_views_Application_MainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/_app_views_Application_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/_app_views_Application_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/controllers.Android" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/controllers.Android" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/controllers.Application" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/controllers.Application" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/models.Producte" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/models.Producte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/models.User" beforeDir="false" afterPath="$PROJECT_DIR$/vistesSesions/tmp/bytecode/DEV/models.User" afterDir="false" />
-    </list>
+    <list default="true" id="29034bc4-161d-47fe-9f44-73fdd4d944d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,6 +26,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2FUEuUS1kogorispUlFxLzJuNlq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
